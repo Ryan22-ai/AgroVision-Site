@@ -154,6 +154,13 @@ body {
   color: var(--green-neon);
   border: 1px solid rgba(74, 222, 128, 0.3);
 }
+.brand-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 9px;
+  object-fit: contain;
+  display: block;
+}
 
 .nav-links {
   display: flex;
