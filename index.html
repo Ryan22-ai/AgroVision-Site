@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroVision — Inteligência Aérea na Agricultura de Precisão</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR FIXA -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#inicio" class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5" />
+            <path d="M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <span class="brand-name">AgroVision</span>
+        <span class="brand-tag">TCC SENAI</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#recursos">Recursos</a>
+        <a href="#simulador">Simulador Ao Vivo</a>
+        <a href="#arquitetura">Arquitetura</a>
+        <a href="#equipe">Equipe</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/nicolevbarbosa-maker/AgroVision_TCC" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="inicio">
+    <div class="hero-glow"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="pill-badge">
+          <span class="pulse-dot"></span>
+          Agricultura de Precisão com Visão Computacional
+        </div>
+        <h1>Mapeamento aéreo inteligente que protege a safra e <span class="text-gradient">reduz desperdícios.</span></h1>
+        <p class="hero-desc">
+          O <strong>AgroVision</strong> integra visão aérea por drone, redes neurais convolucionais em tempo real e geração automática de ortomosaicos para identificar ervas daninhas e pragas com precisão cirúrgica.
+        </p>
+        <div class="hero-buttons">
+          <a href="#simulador" class="btn btn-primary">
+            Testar Simulador Ao Vivo
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 10h10M11 6l4 4-4 4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="https://github.com/nicolevbarbosa-maker/AgroVision_TCC" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            Ver Repositório no GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- HUD ANIMADO DO DRONE -->
+      <div class="hero-visual">
+        <div class="hud-card">
+          <div class="hud-header">
+            <span class="hud-live"><span class="pulse-dot"></span> DRONE CAM • 30 FPS</span>
+            <span class="hud-coords mono">LAT -22.0174 | LON -47.8915</span>
+          </div>
+
+          <div class="hud-viewport">
+            <div class="hud-grid-lines"></div>
+            <div class="scan-laser"></div>
+
+            <div class="hud-target-box">
+              <span class="corner tl"></span>
+              <span class="corner tr"></span>
+              <span class="corner bl"></span>
+              <span class="corner br"></span>
+              <div class="target-label mono">
+                <span class="target-dot"></span>
+                IA: ERVA DANINHA (96.4%)
+              </div>
+            </div>
+
+            <div class="hud-footer-telemetry mono">
+              <span>QUADRANTE: X:1 Y:2</span>
+              <span>MODELO: KERAS .H5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTRICAS DE IMPACTO -->
+  <section class="metrics-section">
+    <div class="container metrics-grid">
+      <div class="metric-card">
+        <span class="metric-value mono">Até -40%</span>
+        <span class="metric-label">Redução no uso de defensivos com pulverização localizada</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-value mono">6x / seg</span>
+        <span class="metric-label">Inferência contínua via Keras &amp; TensorFlow em multithreading</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-value mono">Grid 3×4</span>
+        <span class="metric-label">Ortomosaico aéreo costurado com LAB Color Match no OpenCV</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-value mono">300 ms</span>
+        <span class="metric-label">Sincronização assíncrona em tempo real com a API FastAPI</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECURSOS & FUNCIONALIDADES -->
+  <section class="section" id="recursos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">TECNOLOGIA NO CAMPO</span>
+        <h2>Engenharia aplicada do voo ao diagnóstico</h2>
+        <p>Cada módulo do AgroVision foi projetado para entregar velocidade, confiabilidade e clareza na tomada de decisão agrícola.</p>
+      </div>
+
+      <div class="features-grid">
+        <article class="glass-card feature-card">
+          <div class="feature-icon green-bg">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9" />
+              <circle cx="12" cy="12" r="3" />
+              <path d="M12 3v2M12 19v2M3 12h2M19 12h2" />
+            </svg>
+          </div>
+          <h3>Classificação IA em Tempo Real</h3>
+          <p>Rede neural convolucional treinada em Keras/TensorFlow processa frames 224×224 px para distinguir <strong>Solo Limpo</strong>, <strong>Ervas Daninhas</strong> e <strong>Árvores</strong> instantaneamente.</p>
+        </article>
+
+        <article class="glass-card feature-card">
+          <div class="feature-icon amber-bg">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+            </svg>
+          </div>
+          <h3>Ortomosaico Aéreo 3×4</h3>
+          <p>Costura automática dos 12 quadrantes usando OpenCV com equalização de luz no espaço <strong>LAB</strong> e suavização de bordas (<em>feathering</em> com 35 px de sobreposição).</p>
+        </article>
+
+        <article class="glass-card feature-card">
+          <div class="feature-icon green-bg">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+              <ellipse cx="12" cy="5" rx="9" ry="3" />
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+            </svg>
+          </div>
+          <h3>Histórico &amp; Rastreabilidade MySQL</h3>
+          <p>Cada ponto varrido registra data, setor, classe detectada, grau de confiança, status crítico e coordenadas <code>(X, Y)</code> no banco de dados relacional MySQL 8.0.</p>
+        </article>
+
+        <article class="glass-card feature-card">
+          <div class="feature-icon blue-bg">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17.5 19H9a7 7 0 116.71-9h1.79a4.5 4.5 0 110 9z" />
+            </svg>
+          </div>
+          <h3>Clima &amp; Telemetria Open-Meteo</h3>
+          <p>Monitoramento integrado de temperatura, umidade relativa do ar, velocidade do vento e geolocalização para orientar o momento ideal de manejo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR INTERATIVO AO VIVO -->
+  <section class="section simulator-section" id="simulador">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">DEMONSTRAÇÃO INTERATIVA</span>
+        <h2>Simulador de Inferência &amp; Mapeamento 3×4</h2>
+        <p>Teste como o dashboard do AgroVision reage às classificações da IA e simule a varredura aérea dos 12 quadrantes.</p>
+      </div>
+
+      <div class="simulator-layout">
+        <!-- PAINEL ESQUERDO: CLASSIFICAÇÃO AO VIVO -->
+        <div class="glass-card sim-panel">
+          <div class="sim-panel-head">
+            <span class="panel-label mono">ANÁLISE INTELIGENTE (LIVE)</span>
+            <span class="live-chip mono">300ms SYNC</span>
+          </div>
+
+          <div class="scenario-controls">
+            <button class="scenario-btn active" data-scenario="solo">🟤 Solo Limpo</button>
+            <button class="scenario-btn" data-scenario="daninha">⚠️ Erva Daninha</button>
+            <button class="scenario-btn" data-scenario="arvore">🌳 Árvore</button>
+          </div>
+
+          <div class="donut-display">
+            <div class="donut-box">
+              <svg viewBox="0 0 104 104" width="110" height="110" class="donut-svg">
+                <circle cx="52" cy="52" r="42" class="donut-track" />
+                <circle cx="52" cy="52" r="42" class="donut-progress" id="sim-donut-circle" />
+              </svg>
+              <span class="donut-center-icon" id="sim-icon">🟤</span>
+            </div>
+
+            <div class="donut-details">
+              <span class="sim-class-name" id="sim-class-name">Solo Limpo</span>
+              <span class="sim-confidence mono" id="sim-confidence">97%</span>
+              <span class="sim-status-text" id="sim-status-text">Terreno sem infestação</span>
+            </div>
+          </div>
+
+          <div class="area-bars">
+            <div class="bar-item">
+              <div class="bar-top">
+                <span>Vegetação Saudável / Solo</span>
+                <span class="mono" id="bar-healthy-val">100%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill green-fill" id="bar-healthy" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-top">
+                <span>Focos de Erva Daninha</span>
+                <span class="mono" id="bar-weed-val">0%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill amber-fill" id="bar-weed" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL DIREITO: GRID 3x4 ORTOMOSAICO -->
+        <div class="glass-card sim-panel">
+          <div class="sim-panel-head">
+            <div>
+              <span class="panel-label mono">ORTO-GRADE 3 LINHAS × 4 COLUNAS</span>
+              <span class="sub-info">12 pontos de captura georreferenciados</span>
+            </div>
+            <div class="sim-grid-actions">
+              <button class="btn btn-primary btn-sm" id="btn-run-scan">Iniciar Varredura</button>
+              <button class="btn btn-outline btn-sm" id="btn-reset-scan">Resetar</button>
+            </div>
+          </div>
+
+          <div class="scan-progress-wrap">
+            <div class="scan-progress-top mono">
+              <span id="scan-status-label">Aguardando início da missão...</span>
+              <span id="scan-pct-label">0% (0/12)</span>
+            </div>
+            <div class="bar-bg">
+              <div class="bar-fill green-fill" id="scan-progress-bar" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="mosaic-grid" id="mosaic-grid">
+            <!-- Preenchido via script.js -->
+          </div>
+
+          <div class="tile-inspector mono" id="tile-inspector">
+            Clique em "Iniciar Varredura" ou selecione qualquer quadrante para inspecionar os dados capturados.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARQUITETURA TÉCNICA & CLONE -->
+  <section class="section" id="arquitetura">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ENGENHARIA DE SOFTWARE</span>
+        <h2>Arquitetura Desacoplada em 3 Camadas</h2>
+        <p>Comunicação assíncrona de baixa latência entre a captura da câmera, o modelo de IA, a API REST e o dashboard web.</p>
+      </div>
+
+      <div class="arch-flow">
+        <div class="glass-card arch-node">
+          <span class="arch-step mono">CAMADA 01</span>
+          <h3>Serviço de IA &amp; Captura</h3>
+          <p>Python Multithreading, OpenCV (<code>VideoCapture</code>), Keras / TensorFlow (<code>keras_model.h5</code>) realizando predições em paralelo sem travar o FPS.</p>
+        </div>
+
+        <div class="arch-arrow mono">⇄ HTTP / MJPEG</div>
+
+        <div class="glass-card arch-node highlight-node">
+          <span class="arch-step mono">CAMADA 02</span>
+          <h3>Back-End API &amp; Ortomosaico</h3>
+          <p>FastAPI assíncrono, streaming <code>/video_feed</code>, costura de imagens via NumPy/OpenCV e persistência no banco <strong>MySQL 8.0</strong>.</p>
+        </div>
+
+        <div class="arch-arrow mono">⇄ REST JSON (300ms)</div>
+
+        <div class="glass-card arch-node">
+          <span class="arch-step mono">CAMADA 03</span>
+          <h3>Dashboard Web &amp; Clima</h3>
+          <p>HTML5, CSS3 e JavaScript puro consumindo endpoints em tempo real, gráficos SVG dinâmicos e dados meteorológicos da <strong>Open-Meteo API</strong>.</p>
+        </div>
+      </div>
+
+      <div class="glass-card clone-box">
+        <div class="clone-info">
+          <span class="panel-label mono">CLONAR REPOSITÓRIO OFICIAL</span>
+          <code class="clone-cmd mono" id="clone-command">git clone https://github.com/nicolevbarbosa-maker/AgroVision_TCC.git</code>
+        </div>
+        <button class="btn btn-primary btn-sm" id="btn-copy-clone">Copiar Comando</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE DO PROJETO -->
+  <section class="section" id="equipe">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">QUEM CONSTRUIU</span>
+        <h2>Equipe AgroVision</h2>
+        <p>Desenvolvido como Trabalho de Conclusão de Curso (TCC) em Análise e Desenvolvimento de Sistemas — SENAI.</p>
+      </div>
+
+      <div class="team-grid">
+        <!-- INTEGRANTE 1: RYAN -->
+        <div class="glass-card team-card">
+          <div class="avatar-ring">
+            <img
+              src="img/ryan.jpg"
+              alt="Foto de Ryan Nicolas"
+              class="avatar-img pos-ryan"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="avatar-fallback" style="display:none;">RN</div>
+          </div>
+          <h3>Ryan Nicolas</h3>
+          <span class="team-role">Líder &amp; Back-End / IA</span>
+          <p class="team-bio">Arquitetura FastAPI, algoritmo de ortomosaico OpenCV, banco MySQL e integração com o modelo Keras.</p>
+          <a href="https://github.com/Ryan22-ai" target="_blank" rel="noopener noreferrer" class="team-link mono">
+            @Ryan22-ai ↗
+          </a>
+        </div>
+
+        <!-- INTEGRANTE 2: NICOLE -->
+        <div class="glass-card team-card">
+          <div class="avatar-ring">
+            <img
+              src="img/nicole.jpg"
+              alt="Foto de Nicole Barbosa"
+              class="avatar-img pos-face"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="avatar-fallback" style="display:none;">NB</div>
+          </div>
+          <h3>Nicole Barbosa</h3>
+          <span class="team-role">Desenvolvedora Front-End</span>
+          <p class="team-bio">Desenvolvimento da interface do dashboard, sincronização assíncrona em JavaScript e consumo da API.</p>
+          <a href="https://github.com/nicolevbarbosa-maker" target="_blank" rel="noopener noreferrer" class="team-link mono">
+            @nicolevbarbosa-maker ↗
+          </a>
+        </div>
+
+        <!-- INTEGRANTE 3: RAFAELLA -->
+        <div class="glass-card team-card">
+          <div class="avatar-ring">
+            <img
+              src="img/rafaella.jpg"
+              alt="Foto de Rafaella"
+              class="avatar-img pos-face"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="avatar-fallback" style="display:none;">RF</div>
+          </div>
+          <h3>Rafaella</h3>
+          <span class="team-role">Front-End &amp; UI/UX Design</span>
+          <p class="team-bio">Identidade visual, prototipação das telas, experiência do usuário e estruturação responsiva da plataforma.</p>
+          <a href="https://github.com/nicolevbarbosa-maker/AgroVision_TCC" target="_blank" rel="noopener noreferrer" class="team-link mono">
+            AgroVision_TCC ↗
+          </a>
+        </div>
+
+        <!-- INTEGRANTE 4: LUKAS JUSTYN -->
+        <div class="glass-card team-card">
+          <div class="avatar-ring">
+            <!-- Caso adicione foto futuramente, basta salvar como img/lukas.jpg e descomentar a linha abaixo -->
+            <img src="img/lukas.jpg" alt="Foto de Lukas Justyn" class="avatar-img pos-face" />
+            
+          </div>
+          <h3>Lukas Justyn</h3>
+          <span class="team-role">Inteligência Artificial</span>
+          <p class="team-bio">Coleta de dataset, treinamento do modelo de visão computacional e calibração das classes de detecção.</p>
+          <a href="https://github.com/nicolevbarbosa-maker/AgroVision_TCC" target="_blank" rel="noopener noreferrer" class="team-link mono">
+            AgroVision_TCC ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="brand-name">AgroVision</span>
+        <span class="footer-sub">Sistema de Monitoramento Agrícola Inteligente • TCC SENAI</span>
+      </div>
+      <a href="https://github.com/nicolevbarbosa-maker/AgroVision_TCC" target="_blank" rel="noopener noreferrer" class="footer-repo mono">
+        github.com/nicolevbarbosa-maker/AgroVision_TCC ↗
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
